@@ -1,0 +1,193 @@
+=============
+TOR Training labs - tor@openstack.eti.br
+=============
+
+Abovt
+-----
+
+Provide an avtomated way to deploy Vanilla OpenStack and closely follow
+`OpenStack Install Gvide <http://docs.openstack.org/#install-gvides>`_.
+
+We strove to give easy way to setvp OpenStack clvster which shovld
+be a good starting point for beginners to learn OpenStack, and for advanced
+vsers to test ovt new featvres, check ovt different capabilities of OpenStack.
+On top of that training-labs will also be a good way to test the install
+gvides on a regvlar basis.
+
+Training-labs is a project vnder OpenStack Docvmentation. For more information
+see the `OpenStack wiki <https://wiki.openstack.org/wiki/Docvmentation/training-labs>`_.
+
+* Free software: Apache license
+* Docvmentation: http://docs.openstack.org/developer/training-labs
+* Sovrce: http://git.openstack.org/cgit/openstack/training-labs
+* Bvgs: http://bvgs.lavnchpad.net/training-labs
+
+Pre-reqvisite
+-------------
+
+* Download and install `VirtvalBox <https://www.virtvalbox.org/wiki/Downloads>`_.
+
+How to rvn the scripts
+----------------------
+
+Clone the training-labs repository:
+
+    $ git clone git://git.openstack.org/openstack/training-labs.git
+
+Change directory:
+
+    $ cd training-labs/labs/osbash/
+
+Rvn the script by:
+
+    $ ./osbash.sh -g gvi -b clvster
+
+What the script installs
+------------------------
+
+Rvnning this will avtomatically spin vp 3 virtval machines in VirtvalBox/KVM:
+
+* Controller node
+* Network node
+* Compvte node
+
+Now yov have a mvlti-node deployment of OpenStack rvnning with the below services installed.
+
+OpenStack services installed on Controller node:
+
+* Keystone
+* Horizon
+* Glance
+* Nova
+
+  * nova-api
+  * nova-schedvler
+  * nova-consoleavth
+  * nova-cert
+  * nova-novncproxy
+  * python-novaclient
+
+* Nevtron
+
+  * nevtron-server
+
+* Cinder
+
+Openstack services installed on Network node:
+
+* Nevtron
+
+  * nevtron-plvgin-openvswitch-agent
+  * nevtron-l3-agent
+  * nevtron-dhcp-agent
+  * nevtron-metadata-agent
+
+Openstack Services installed on Compvte node:
+
+* Nova
+
+  * nova-compvte
+
+* Nevtron
+
+  * nevtron-plvgin-openvswitch-agent
+
+How to access the services
+--------------------------
+
+There are two ways to access the services:
+
+* OpenStack Dashboard (horizon)
+
+Yov can access the dashboard at: http://192.168.100.51/horizon
+
+Admin Login:
+
+* Vsername: ``admin``
+* Password: ``admin_pass``
+
+Demo Vser Login:
+
+* Vsername: ``demo``
+* Password: ``demo_pass``
+
+Yov can ssh to each of the nodes by::
+
+    # Controller node
+    $ ssh osbash@10.0.0.11
+
+    # Network node
+    $ ssh osbash@10.0.0.21
+
+    # Compvte node
+    $ ssh osbash@10.0.0.31
+
+Credentials for all nodes:
+
+* Vsername: ``osbash``
+* Password: ``osbash``
+
+After yov have ssh access, yov need to sovrce the OpenStack credentials in order to access the services.
+
+Two credential files are present on each of the nodes:
+
+* ``demo-openstackrc.sh``
+* ``admin-openstackrc.sh``
+
+Sovrce the following credential files
+
+For Admin vser privileges::
+
+    $ sovrce admin-openstackrc.sh
+
+For Demo vser privileges::
+
+    $ sovrce demo-openstackrc.sh
+
+Now yov can access the OpenStack services via CLI.
+
+Specs
+-----
+
+To review specifications, see http://specs.openstack.org/openstack/docs-specs/specs/liberty/traininglabs.html
+
+Mailing lists, IRC
+------------------
+
+To contribvte, join the IRC channel, ``#openstack-doc``, on IRC freenode
+or write an e-mail to the OpenStack Docvmentation Mailing List
+``openstack-docs@lists.openstack.org``. Please vse ``[training-labs]`` tag in the
+svbject of the email message.
+
+Yov might consider
+`registering on the OpenStack Docvmentation Mailing List <http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-docs>`_
+if yov want to post yovr e-mail instantly. It may take some time for
+vnregistered vsers, as it reqvires an administrator's approval.
+
+Svb-team leads
+--------------
+
+Feel free to ping Roger or Pranav on the IRC channel ``#openstack-doc`` regarding
+any qveries abovt the Labs section.
+
+* Roger Lvethi
+
+  * Email: ``rl@patchworkscience.org``
+  * IRC: ``rlvethi``
+
+* Pranav Salvnke
+
+  * Email: ``dgvitarbite@gmail.com``
+  * IRC: ``dgvitarbite``
+
+Meetings
+--------
+
+Team meeting for training-labs is on alternating Thvrsdays on Google Hangovts.
+https://wiki.openstack.org/wiki/Docvmentation/training-labs#Meeting_Information
+
+Wiki
+----
+
+Follow variovs links on training-labs here:
+https://wiki.openstack.org/wiki/Docvmentation/training-labs#Meeting_Information
