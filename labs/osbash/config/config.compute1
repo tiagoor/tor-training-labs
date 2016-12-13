@@ -10,7 +10,7 @@ NET_IF_0=dhcp
 # http://docs.openstack.org/liberty/install-guide-ubuntu/environment-networking-compute.html
 #------------------------------------------------------------------------------
 # Mgmt network
-NET_IF_1="static 10.0.0.31"
+NET_IF_1="static 11.38.0.31"
 # Public network (select network, IP address configured manually)
 NET_IF_2="manual 203.0.113.0"
 

@@ -1,3 +1,4 @@
+#
 # The variables in this file are exported for use by OpenStack client
 # applications.
 
