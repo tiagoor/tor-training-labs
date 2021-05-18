@@ -52,11 +52,11 @@ Clone the training-labs repository:
 
 Change directory:
 
-    # cd training-labs/labs/osbash/
+    # cd labs/osbash/
 
 Rvn the script by:
 
-    # ./osbash.sh -g gvi -b clvster
+    # ./osbash/osbash.sh -b cluster
 
 What the script installs
 ------------------------
